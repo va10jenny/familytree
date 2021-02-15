@@ -33,6 +33,9 @@
             "styles": [
               "src/styles.scss"
             ],
+            "allowedCommonJsDependencies": [
+              "gedcom-d3"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -68,7 +71,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "familytree:build"
+            "browserTarget": "familytree:build",
+            "baseHref": "/familytree"
           },
           "configurations": {
             "production": {
@@ -123,6 +127,10 @@
               "devServerTarget": "familytree:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
     }
